@@ -1,0 +1,56 @@
+proxies:
+- name: vless-reality-vision-C20251203143210
+  type: vless
+  server: 210.0.244.24
+  port: 30645
+  uuid: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: apple.com
+  reality-opts:
+    public-key: CVfQqITk9cfwwHGoGmFwLIqVWfPtF0iQjAr7yOEaDU0
+    short-id: 33e21334
+  client-fingerprint: chrome
+
+- name: vmess-ws-C20251203143210
+  type: vmess
+  server: 210.0.244.24
+  port: 2052
+  uuid: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: www.bing.com
+  ws-opts:
+    path: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed-vm
+    headers:
+      Host: www.bing.com
+
+- name: hysteria2-C20251203143210
+  type: hysteria2
+  server: 210.0.244.24
+  port: 51590
+  password: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed
+  alpn:
+    - h3
+  sni: www.bing.com
+  skip-cert-verify: true
+  fast-open: true
+
+- name: tuic5-C20251203143210
+  type: tuic
+  server: 210.0.244.24
+  port: 12081
+  uuid: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed
+  password: 1f8e69e5-8b76-4a46-b9e1-fd7bb513ceed
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: www.bing.com
+  skip-cert-verify: true
